@@ -1,4 +1,4 @@
-/*-----------------------------------------------------------
+Mixins/*-----------------------------------------------------------
 
   Template Name: MexDot - Ajax Portfolio Showcase HTML Template
   Template URI: https://template.dsngrid.com//mexdot
@@ -2793,19 +2793,22 @@ a:hover, a:active {
 }
 
 .header-sm-personal .title-lg {
-  font-size: 180px;
-  line-height: 180px;
+  font-size: 90px;
+  line-height: normal;
+  text-align: center;
 }
 @media only screen and (max-width: 991px) {
   .header-sm-personal .title-lg {
-    font-size: 90px;
-    line-height: 100px;
+    font-size: 80px;
+    line-height: normal;
+    color: #000;
   }
 }
 @media only screen and (max-width: 575px) {
   .header-sm-personal .title-lg {
     text-align: center;
     align-items: center;
+    font-size: 13vw;
   }
 }
 .header-sm-personal .title-lg.scale-span span {
@@ -3149,6 +3152,9 @@ a:hover, a:active {
 }
 .main-slider .control-nav .swiper-slide:not(.swiper-slide-active) svg {
   opacity: 0;
+}
+.swiper-slide img{
+  border-radius: 30px;
 }
 .main-slider .control-nav .btn-all {
   border-style: solid;
@@ -4894,6 +4900,7 @@ div.effect-popup, .has-popup div.img-box-parallax, .has-popup div.pop-up {
   height: 100%;
 }
 
+
 .dsn-swiper-parallax-transform {
   transition-property: opacity, transform, visibility;
 }
@@ -5429,8 +5436,9 @@ ul.dsn-list .list-item.border.has-border-radius {
 @media only screen and (max-width: 767px) {
   .dsn-award .box-img {
     position: relative;
-    height: 50vh;
+    height: 70vh;
   }
+  
 }
 @media only screen and (max-width: 767px) {
   .dsn-award .box-text {
@@ -5447,9 +5455,29 @@ ul.dsn-list .list-item.border.has-border-radius {
   margin-left: calc(-1 * var(--dsn-col-item));
   margin-top: calc(-1 * var(--dsn-row-item));
 }
+.footer-abt{
+  font-size: 16px;
+}
+.whatsapp-icon {
+	position: fixed;
+	bottom: 90px;
+	right: 20px;
+	z-index: 1000;
+}
+
+.whatsapp-icon img {
+	width: 80px;
+	height: 80px;
+}
+
+
+
 @media only screen and (max-width: 575px) {
   .dsn-grid-layout:not(.dsn-n-default) {
     --dsn-width-item: 1 !important;
+  }
+  .sub-heading{
+    font-size: 11px!important;
   }
 }
 .dsn-grid-layout > .grid-item {
@@ -6444,6 +6472,8 @@ ul.intro-project-list li h5.title-list-project + p.description-list-project {
 }
 .dsn-skills-item .box-img img {
   width: 58px;
+  height: 58px;
+  object-fit: cover;
 }
 .dsn-skills-item.border-right {
   padding-right: 30px;
