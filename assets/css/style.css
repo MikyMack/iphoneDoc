@@ -41,7 +41,7 @@ Mixins/*-----------------------------------------------------------
 :root, :root .v-light, :root .v-light-head {
   --bg-color: #F3F3F3;
   --assistant-color: #E9E9E9;
-  --theme-color: #b3de4f;
+  --theme-color: #d62912;
   --theme-color-font: #fff;
   --font-color: #5c5c5c;
   --heading-color: #000;
@@ -4395,7 +4395,7 @@ a:hover, a:active {
   border: 0;
   border-bottom: 1px solid var(--border-color);
   padding: 10px 18px;
-  color: var(--heading-color);
+  color: white;
   margin-bottom: 0;
   background-color: transparent;
 }
@@ -4408,7 +4408,7 @@ a:hover, a:active {
   line-height: 16px;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: var(--heading-color);
+  color: white;
   padding: 20px 30px;
   border-radius: 30px;
   cursor: pointer;
