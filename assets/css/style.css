@@ -205,7 +205,7 @@ body:not(.dsn-cursor-effect) #dsn_cursor, body:not(.dsn-cursor-effect) #dsn_curs
 #dsn_cursor {
   width: 30px;
   height: 30px;
-  border: 2px solid var(--theme-color);
+  border: 2px solid rgb(175, 18, 18);
 }
 #dsn_cursor path {
   display: none;
@@ -217,7 +217,7 @@ body:not(.dsn-cursor-effect) #dsn_cursor, body:not(.dsn-cursor-effect) #dsn_curs
 #dsn_cursor_inner {
   width: 7px;
   height: 7px;
-  background-color: var(--theme-color);
+  background-color:rgb(175, 18, 18) ;
 }
 
 #dsn_preloader {
@@ -1712,7 +1712,7 @@ a:hover, a:active {
 
 .main-brand img,
 .dsnload__img img {
-  width: 80px;
+  width: 110px;
   max-width: 100%;
   height: auto;
 }
@@ -2822,7 +2822,15 @@ a:hover, a:active {
 }
 @media only screen and (max-width: 991px) {
   .header-sm-personal .title-lg img {
-    display: none;
+    /* display: none; */
+    width: 100px;
+    height: 150px;
+  }
+
+}
+@media only screen and (max-width: 380px) {
+  #banner-title {
+    margin-top: 3rem!important;
   }
 }
 
@@ -6129,8 +6137,9 @@ ul.intro-project-list li h5.title-list-project + p.description-list-project {
     width: 90px;
   }
 }
+
 .testimonal-personal .testimonal-item .title {
-  margin-top: -40px;
+  margin-top: 0px;
   mix-blend-mode: multiply;
   max-width: 710px;
 }
@@ -6155,8 +6164,8 @@ ul.intro-project-list li h5.title-list-project + p.description-list-project {
 }
 .testimonal-personal .prev-paginate .dsn-icon,
 .testimonal-personal .next-paginate .dsn-icon {
-  height: 100%;
-  border-radius: 10px;
+  height: 80px;
+  border-radius: 50px;
 }
 @media only screen and (max-width: 767px) {
   .testimonal-personal .next-paginate {
@@ -7294,6 +7303,7 @@ ul.intro-project-list li h5.title-list-project + p.description-list-project {
   aspect-ratio: 1/1;
   grid-column-start: 6;
   aspect-ratio: 3/2;
+  
 }
 @media only screen and (max-width: 575px) {
   .about-has-image .box-img .img-inner:nth-of-type(2) {
