@@ -2830,7 +2830,7 @@ a:hover, a:active {
 }
 @media only screen and (max-width: 380px) {
   #banner-title {
-    margin-top: 3rem!important;
+    margin-top: 9rem!important;
   }
 }
 
@@ -3178,6 +3178,28 @@ a:hover, a:active {
 .main-slider .dsn-swiper-paginate {
     display: none;
   }
+  .bottom-navbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+     height: 4.5rem;
+    z-index: 1;
+    background-color: #fffdfd; /* White background */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+.navbar-nav{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 1.2rem;
+}
+.bottom-navbar .nav-link {
+    color: black!important;
+    font-size: 23px;
+    width: 28px;
+    height: 28px;
+}
 }
 .main-slider .dsn-swiper-paginate > .swiper-pagination-vertical.swiper-pagination-bullets {
   width: 20px;
@@ -5470,7 +5492,7 @@ ul.dsn-list .list-item.border.has-border-radius {
 	position: fixed;
 	bottom: 90px;
 	right: 20px;
-	z-index: 1000;
+	z-index: 1;
 }
 
 .whatsapp-icon img {
