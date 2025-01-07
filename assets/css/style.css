@@ -2820,6 +2820,11 @@ a:hover, a:active {
   height: 268px;
   border-radius: 140px;
 }
+.ser-img{
+  border-radius: 20px!important;
+  height: 60px!important;
+
+}
 @media only screen and (max-width: 991px) {
   .header-sm-personal .title-lg img {
     /* display: none; */
