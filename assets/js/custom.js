@@ -531,13 +531,13 @@ const dsnParam = {
     const menu = document.getElementById("site_menu_header");
     if (!menu) return;
     const targets = {
-      toggle: menu.querySelector("#navbar_toggle"),
-      backgroundMain: menu.querySelector(".bg-load:not(.dsn-svg-transition)"),
-      svg: menu.querySelector("svg.bg-load path"),
-      subMenu: $(menu).find("li.nav-item.has-sub-menu > a"),
-      back: $(menu).find("li.dsn-back"),
-      hamburger: menu.classList.contains('dsn-hamburger'),
-      scrDown: 0
+        toggle: menu.querySelector("#navbar_toggle"),
+        backgroundMain: menu.querySelector(".bg-load:not(.dsn-svg-transition)"),
+        svg: menu.querySelector("svg.bg-load path"),
+        subMenu: $(menu).find("li.nav-item.has-sub-menu > a"),
+        back: $(menu).find("li.dsn-back"),
+        hamburger: menu.classList.contains('dsn-hamburger'),
+        scrDown: 0
     };
     const reserved = dsnGrid.useState(false, (newValue, oldValue) => oldValue && removeOpenMenu());
     const typeNav = dsnGrid.useState(targets.hamburger, newValue => newValue ? menu.classList.add("dsn-hamburger") : menu.classList.remove("dsn-hamburger"));
@@ -545,132 +545,146 @@ const dsnParam = {
     const removeOpenMenu = () => menu.querySelectorAll('ul').forEach(item => item.classList.remove('open'));
 
     const TransEnd = () => {
-      var _menu$querySelector;
+        var _menu$querySelector;
 
-      return reserved.getValue() && ((_menu$querySelector = menu.querySelector('.primary-nav')) === null || _menu$querySelector === void 0 ? void 0 : _menu$querySelector.classList.add('open'));
+        return reserved.getValue() && ((_menu$querySelector = menu.querySelector('.primary-nav')) === null || _menu$querySelector === void 0 ? void 0 : _menu$querySelector.classList.add('open'));
     };
 
     const onCompleteAnimate = e => {
-      e.classList.toggle('open');
-      menu.classList.toggle('dsn-open');
-      $body.toggleClass('over-hidden');
-      reserved.setValue(!reserved.getValue());
+        e.classList.toggle('open');
+        menu.classList.toggle('dsn-open');
+        $body.toggleClass('over-hidden');
+        reserved.setValue(!reserved.getValue());
     };
 
     const handleClick = e => {
-      e.preventDefault();
-      e.stopPropagation();
-      e.currentTarget.closest('.open').classList.remove('open');
+        e.preventDefault();
+        e.stopPropagation();
+        e.currentTarget.closest('.open').classList.remove('open');
     };
 
     const handleClickSubMenu = function (e) {
-      var _e$currentTarget, _e$currentTarget$pare, _e$currentTarget$pare2;
+        var _e$currentTarget, _e$currentTarget$pare, _e$currentTarget$pare2;
 
-      if (!typeNav.getValue()) return;
-      handleClick(e);
-      (_e$currentTarget = e.currentTarget) === null || _e$currentTarget === void 0 ? void 0 : (_e$currentTarget$pare = _e$currentTarget.parentElement) === null || _e$currentTarget$pare === void 0 ? void 0 : (_e$currentTarget$pare2 = _e$currentTarget$pare.querySelector('ul')) === null || _e$currentTarget$pare2 === void 0 ? void 0 : _e$currentTarget$pare2.classList.add("open");
+        if (!typeNav.getValue()) return;
+        handleClick(e);
+        (_e$currentTarget = e.currentTarget) === null || _e$currentTarget === void 0 ? void 0 : (_e$currentTarget$pare = _e$currentTarget.parentElement) === null || _e$currentTarget$pare === void 0 ? void 0 : (_e$currentTarget$pare2 = _e$currentTarget$pare.querySelector('ul')) === null || _e$currentTarget$pare2 === void 0 ? void 0 : _e$currentTarget$pare2.classList.add("open");
     };
 
     const handleClickBackMenu = e => {
-      handleClick(e);
-      e.currentTarget.closest('ul').closest('li').closest('ul').classList.add("open");
+        handleClick(e);
+        e.currentTarget.closest('ul').closest('li').closest('ul').classList.add("open");
     };
 
     const toggleClick = function () {
-      if (!reserved.getValue()) {
-        dsnGrid.svgAnimate.up(targets.svg, TransEnd).to("#dsn-scrollbar", {
-          y: -200,
-          duration: 1,
-          ease: 'power4.in'
-        }, "top").set(targets.backgroundMain, {
-          autoAlpha: 1
+        if (!reserved.getValue()) {
+            dsnGrid.svgAnimate.up(targets.svg, TransEnd).to("#dsn-scrollbar", {
+                y: -200,
+                duration: 1,
+                ease: 'power4.in'
+            }, "top").set(targets.backgroundMain, {
+                autoAlpha: 1
+            }, "center");
+            onCompleteAnimate(this);
+        } else dsnGrid.svgAnimate.down(targets.svg, () => onCompleteAnimate(this)).to("#dsn-scrollbar", {
+            y: 0,
+            clearProps: "y",
+            duration: 1,
+            ease: 'power4'
+        }, "-=1").set(targets.backgroundMain, {
+            autoAlpha: 0
         }, "center");
-        onCompleteAnimate(this);
-      } else dsnGrid.svgAnimate.down(targets.svg, () => onCompleteAnimate(this)).to("#dsn-scrollbar", {
-        y: 0,
-        clearProps: "y",
-        duration: 1,
-        ease: 'power4'
-      }, "-=1").set(targets.backgroundMain, {
-        autoAlpha: 0
-      }, "center");
     };
 
     const resizeNav = function () {
-      if (window.innerWidth > 991 && typeNav.getValue()) {
-        typeNav.setValue(false);
-      } else if (window.innerWidth <= 991 && !typeNav.getValue()) {
-        typeNav.setValue(true);
-      } else if (dsnGrid.isMobile()) {
-        typeNav.setValue(true);
-      }
+        if (window.innerWidth > 991 && typeNav.getValue()) {
+            typeNav.setValue(false);
+        } else if (window.innerWidth <= 991 && !typeNav.getValue()) {
+            typeNav.setValue(true);
+        } else if (dsnGrid.isMobile()) {
+            typeNav.setValue(true);
+        }
     };
 
     if (!targets.hamburger) {
-      window.addEventListener('resize', resizeNav);
-      resizeNav();
+        window.addEventListener('resize', resizeNav);
+        resizeNav();
     }
 
     new Promise(resolve => setTimeout(() => resolve(), 300)).then(() => {
-      var _targets$toggle;
+        var _targets$toggle;
 
-      return dsnGrid.spltting.Char((_targets$toggle = targets.toggle) === null || _targets$toggle === void 0 ? void 0 : _targets$toggle.querySelector('.text-menu'));
+        return dsnGrid.spltting.Char((_targets$toggle = targets.toggle) === null || _targets$toggle === void 0 ? void 0 : _targets$toggle.querySelector('.text-menu'));
     }).then(() => {
-      var _targets$toggle2;
+        var _targets$toggle2;
 
-      return dsnGrid.spltting.Char((_targets$toggle2 = targets.toggle) === null || _targets$toggle2 === void 0 ? void 0 : _targets$toggle2.querySelector('.text-open'));
+        return dsnGrid.spltting.Char((_targets$toggle2 = targets.toggle) === null || _targets$toggle2 === void 0 ? void 0 : _targets$toggle2.querySelector('.text-open'));
     }).then(() => {
-      var _targets$toggle3;
+        var _targets$toggle3;
 
-      return dsnGrid.spltting.Char((_targets$toggle3 = targets.toggle) === null || _targets$toggle3 === void 0 ? void 0 : _targets$toggle3.querySelector('.text-close'));
+        return dsnGrid.spltting.Char((_targets$toggle3 = targets.toggle) === null || _targets$toggle3 === void 0 ? void 0 : _targets$toggle3.querySelector('.text-close'));
     }).then(() => {
-      targets.back.find(".text-toggle-back").each(function ($index) {
-        setTimeout(() => dsnGrid.spltting.Char(this), 10 * $index);
-      });
+        var _targets$toggle4;
+
+        return dsnGrid.spltting.Char((_targets$toggle4 = targets.toggle) === null || _targets$toggle4 === void 0 ? void 0 : _targets$toggle4.querySelector('.text-toggle-back'));
     }).then(() => {
-      menu.querySelectorAll('ul').forEach((item, index) => {
-        item.style.setProperty('--dsn-li-name', "dsn" + index);
-        Object.keys(item.children).forEach($key => {
-          item.children[$key].style.setProperty('--dsn-li-index', $key);
+        menu.querySelectorAll('ul').forEach((item, index) => {
+            item.style.setProperty('--dsn-li-name', "dsn" + index);
+            Object.keys(item.children).forEach($key => {
+                item.children[$key].style.setProperty('--dsn-li-index', $key);
+            });
         });
-      });
     }).then(() => {
-      gsap.set(menu, {
-        yPercent: -100,
-        autoAlpha: 0
-      });
-      menu.classList.remove('d-none');
-      gsap.to(menu, {
-        yPercent: 0,
-        autoAlpha: 0,
-        delay: 1,
-        clearProps: true
-      });
+        gsap.set(menu, {
+            yPercent: -100,
+            autoAlpha: 0
+        });
+        menu.classList.remove('d-none');
+        gsap.to(menu, {
+            yPercent: 0,
+            autoAlpha: 0,
+            delay: 1,
+            clearProps: true
+        });
     });
-    $effectScroll.getListener(function (e, x, y) {
-      if (y > 170) {
-        if (targets.scrDown < y) {
-          menu.classList.add("nav-bg", "hide-nav");
-        } else {
-          menu.classList.remove("hide-nav");
-        }
-      } else {
-        menu.classList.remove("nav-bg", "hide-nav");
-      }
 
-      targets.scrDown = y;
+    $effectScroll.getListener(function (e, x, y) {
+        if (y > 170) {
+            if (targets.scrDown < y) {
+                menu.classList.add("nav-bg", "hide-nav");
+            } else {
+                menu.classList.remove("hide-nav");
+            }
+        } else {
+            menu.classList.remove("nav-bg", "hide-nav");
+        }
+
+        targets.scrDown = y;
     });
+
     (_targets$toggle4 = targets.toggle) === null || _targets$toggle4 === void 0 ? void 0 : _targets$toggle4.addEventListener('click', toggleClick);
     targets.subMenu.on('click', handleClickSubMenu);
     targets.back.on('click', handleClickBackMenu);
     dsnGrid.killAjax(function () {
-      var _targets$toggle5;
+        var _targets$toggle5;
 
-      (_targets$toggle5 = targets.toggle) === null || _targets$toggle5 === void 0 ? void 0 : _targets$toggle5.removeEventListener('click', toggleClick);
-      targets.subMenu.off('click', handleClickSubMenu);
-      targets.back.off('click', handleClickBackMenu);
+        (_targets$toggle5 = targets.toggle) === null || _targets$toggle5 === void 0 ? void 0 : _targets$toggle5.removeEventListener('click', toggleClick);
+        targets.subMenu.off('click', handleClickSubMenu);
+        targets.back.off('click', handleClickBackMenu);
     });
-  }
+
+    // Check if the page has been visited before
+    if (!sessionStorage.getItem('visited')) {
+        // Set visited to true and refresh the page
+        sessionStorage.setItem('visited', 'true');
+        location.reload();  // Refresh page
+    } else {
+        // Reset the sessionStorage flag if needed, for future visits
+        sessionStorage.removeItem('visited');
+    }
+}
+
+
 
   function dropHash() {
     const linked = {
@@ -1539,4 +1553,111 @@ const dsnParam = {
 function sidebarOptions() {
   document.body.classList.toggle('dsn-show-sidebar');
 }
+document.addEventListener('DOMContentLoaded', () => {
+  const sliderWrapper = document.querySelector('.slider-wrapper');
+  const leftBtn = document.querySelector('.arrow-btn.left');
+  const rightBtn = document.querySelector('.arrow-btn.right');
+  let currentIndex = 0;
+
+  // Function to update the slider position
+  function updateSlider() {
+    const cardWidth = sliderWrapper.children[0].offsetWidth + 20; // Include margin
+    const totalCards = sliderWrapper.children.length;
+
+    // Loop logic for infinite scrolling
+    if (currentIndex < 0) {
+      currentIndex = totalCards - 2; // Go to second-last card to maintain 2-card view
+    } else if (currentIndex > totalCards - 2) {
+      currentIndex = 0; // Go back to the first card
+    }
+
+    const translateX = -currentIndex * cardWidth;
+    sliderWrapper.style.transform = `translateX(${translateX}px)`;
+  }
+
+  // Function to initialize the slider with Swiper
+  const NavSwiperPrev = function (container, swiper, nav) {
+    const navContainer = container.querySelector('.dsn-nex-prev .prev .swiper');
+    if (!navContainer) return false;
+
+    // Apply custom parallax effect to the title blocks if window width is greater than 575px
+    if (window.innerWidth > 575) {
+      navContainer.querySelectorAll('h6.sm-title-block').forEach($item => {
+        const s = dsnGrid.spltting.Char($item);
+        s.chars.forEach(($item, $index) => {
+          if ($index === 0) {
+            $index = $index + 4;
+            $item.setAttribute('data-swiper-parallax-y', `${$index * -2}%`);
+            $item.setAttribute('data-swiper-parallax-opacity', '0');
+            $item.classList.add('swiper-parallax-transform');
+          } else {
+            $index = $index + 5;
+            $item.setAttribute('data-swiper-parallax-y', `${$index * -4}%`);
+            $item.setAttribute('data-swiper-parallax-opacity', '0');
+            $item.setAttribute('data-swiper-parallax-duration', $index * 100);
+            $item.classList.add('swiper-parallax-transform');
+          }
+        });
+      });
+    }
+
+    const navSlider = new Swiper(navContainer, {
+      speed: 1000,
+      loop: false,
+      touchRatio: 0.2,
+      resistanceRatio: 0.65,
+      effect: 'fade',
+      parallax: true,
+      slidesPerView: 'auto',
+      allowTouchMove: false
+    });
+
+    nav.thumbs.swiper = navSlider;
+
+    setTimeout(function () {
+      navContainer.classList.remove('d-none');
+    }, 3000);
+
+    return navSlider;
+  };
+
+
+  leftBtn.addEventListener('click', () => {
+    currentIndex--; // Move backward
+    updateSlider();
+  });
+
+
+  rightBtn.addEventListener('click', () => {
+    currentIndex++; 
+    updateSlider();
+  });
+
+ 
+  window.addEventListener('resize', () => {
+    updateSlider(); 
+  });
+
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') {
+      console.log("Page is visible again");
+      updateSlider();  
+    }
+  });
+
+
+  window.addEventListener('focus', () => {
+    console.log("Window focused");
+    updateSlider();
+  });
+
+ 
+  setTimeout(updateSlider, 100);  // Delay to ensure layout is ready
+});
+
+
+
+
+
 //# sourceMappingURL=custom.js.map
