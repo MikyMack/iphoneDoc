@@ -2263,6 +2263,10 @@ margin-top: .5rem;
 
   
   }
+ 
+  .ftr-contact p{
+    margin-top: 10px;
+  }
 .footer-details div p a ,.footer-details div p{
   color: white;
   font-size: 13px;
@@ -2294,6 +2298,10 @@ margin-top: .5rem;
 @media only screen and (max-width: 767px) {
   .next-projects .box-content .btn-arrow {
     display: none;
+  }
+  .ftr-loc p{
+    width: 50%;
+
   }
 }
 .next-projects .box-content .btn-arrow .icon {
@@ -3650,13 +3658,13 @@ margin-top: .5rem;
   display: flex;
  align-items: center;
  
-  justify-content: space-between;
+  justify-content: end;
 }
 @media(max-width:700px){
   .top-hd{
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: end;
     align-items: center;
  
   }
