@@ -1,8 +1,6 @@
 <!doctype html>
 <html class="no-js" lang="">
 
-
-<!-- Mirrored from template.dsngrid.com/mexdot/light/contact.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 01 Jan 2025 11:49:40 GMT -->
 <head>
     <meta charset="utf-8">
     <meta name="description" content="">
@@ -15,7 +13,7 @@
     <link rel="icon" href="assets/docimg/logo.png" sizes="32x32" />
     <link rel="icon" href="assets/docimg/logo.png" sizes="192x192" />
 
-    <title>IPHONE DOC</title>
+    <title>IPHON DOC</title>
 
     <link href="assets/css/plugins.css" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/style.css">
@@ -60,7 +58,7 @@
 
 
         <div class="logo-box v-middle">
-            <h3 class="title text-upper">Iphone Doc</h3>
+            <h3 class="title text-upper">Iphon Doc</h3>
         </div>
 
         <div class="loading-count">
@@ -362,14 +360,12 @@
                                         <img class="cover-bg-img" src="assets/img/bg.svg" alt="">
                                     </div>
                                     <div class="dsn-form form-box d-flex flex-column p-relative">
-                                        <form id="contact-form" class="form w-100" method="post" action="https://template.dsngrid.com/mexdot/light/contact.php"
-                                            data-toggle="validator">
+                                        <form id="contact-form" class="form w-100" onsubmit="sendToWhatsApp(event)">
                                             <div class="messages"></div>
                                             <div class="input__wrap controls">
                                                 <div class="d-grid" data-dsn-gap="0px 30px">
                                                     <div class="form-group dsn-up">
                                                         <div class="entry-box">
-
                                                             <input id="form_name" type="text" name="name"
                                                                 placeholder="Type your name" required="required"
                                                                 data-error="name is required." />
@@ -378,7 +374,6 @@
                                                     </div>
                                                     <div class="form-group dsn-up">
                                                         <div class="entry-box">
-
                                                             <input id="form_email" type="email" name="email"
                                                                 placeholder="Type your Email Address"
                                                                 required="required"
@@ -388,14 +383,12 @@
                                                     </div>
                                                 </div>
 
-
                                                 <div class="form-group dsn-up">
                                                     <div class="entry-box">
-
                                                         <textarea id="form_message" class="form-control" name="message"
                                                             rows="7" placeholder="Tell us about you and the world"
                                                             required="required"
-                                                            data-error="Please,leave us a message."></textarea>
+                                                            data-error="Please, leave us a message."></textarea>
                                                     </div>
                                                     <div class="help-block with-errors"></div>
                                                 </div>
@@ -408,6 +401,18 @@
                                                 </div>
                                             </div>
                                         </form>
+                                        <script>
+                                            function sendToWhatsApp(event) {
+                                                event.preventDefault();
+                                                const name = document.getElementById('form_name').value;
+                                                const email = document.getElementById('form_email').value;
+                                                const message = document.getElementById('form_message').value;
+                                                const whatsappNumber = '+918714014140';
+                                                const whatsappMessage = `Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
+                                                const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+                                                window.open(whatsappUrl, '_blank');
+                                            }
+                                        </script>
                                     </div>
                                 </div>
                             </div>
@@ -451,7 +456,7 @@
                     <div class="main-footer">
                         <div class="footer-abt">
                             <img src="/assets/docimg/logo.png" alt="">
-                            <p>iPhone Doc is your one-stop solution for all <br> iPhone repair needs,
+                            <p>iPhon Doc is your one-stop solution for all <br> iPhone repair needs,
                                 offering swift and reliable fixes!</p>
                                 <ul class="socials d-flex align-items-center">
                                     <li>
@@ -495,7 +500,7 @@
     <div class="footer-details">
         <div class="ftr-loc">
             <h4><span><i class="fas fa-map-marker-alt"></i></span> Location</h4>
-            <p>Ground floor, iPhone Doc  Mobile Service Center,<br> Vyttila,  Ernakulam, Kerala 682019</p>
+            <p>Ground floor, iPhon Doc  Mobile Service Center,<br> Vyttila,  Ernakulam, Kerala 682019</p>
         </div>
         <div class="ftr-email">
             <h4><span><i class="fas fa-envelope"></i></span> Email</h4>
@@ -553,6 +558,4 @@
     <script src="assets/js/custom.js"></script>
 </body>
 
-
-<!-- Mirrored from template.dsngrid.com/mexdot/light/contact.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 01 Jan 2025 11:49:40 GMT -->
 </html>
