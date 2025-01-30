@@ -375,6 +375,11 @@ Mixins/*-----------------------------------------------------------
     --dsn-gap-container: 15px;
     --title-heading: 37px;
   }
+  .arrow-btn.left {
+    left: -10px;
+    width: 40px;
+    height: 40px;
+  }
 
 }
 
@@ -2042,6 +2047,7 @@ width: 100%;
 .socials {
   text-align: center;
   font-size: 14px;
+  gap: 50px!important;
 }
 .socials li a {
   position: relative;
@@ -2051,6 +2057,9 @@ width: 100%;
 }
 .socials li a:after, .socials li a span, .socials li a:hover i {
   transition: all 0.3s cubic-bezier(0.55, 0.02, 0.1, 0.9);
+}
+.wrk{
+  display: block;
 }
 .socials li a:after {
   content: "";
@@ -2180,6 +2189,13 @@ width: 100%;
   }
   .next-page .tob-box .title {
     margin-bottom: 20px;
+  }
+  .wrk{
+    display: none;
+  }
+  .call-icon img,.whatsapp-icon img{
+    width: 60px;
+    height: 60px;
   }
 }
 /* footer */
@@ -4909,6 +4925,9 @@ margin-top: .5rem;
   margin-bottom: 0;
   background-color: transparent;
 }
+.dsn-form .entry-box input::placeholder ,.dsn-form .entry-box textarea::placeholder{
+  color: #fafafa;
+}
 .dsn-form .entry-box textarea {
   min-height: 50px;
 }
@@ -5975,6 +5994,16 @@ ul.dsn-list .list-item.border.has-border-radius {
 }
 .footer-abt{
   font-size: 16px;
+}
+.call-icon{
+  position: fixed;
+	bottom: 150px;
+	right: 20px;
+	z-index: 1;
+}
+.call-icon img{
+  width: 80px;
+	height: 80px;
 }
 .whatsapp-icon {
 	position: fixed;
