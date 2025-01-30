@@ -336,7 +336,7 @@
                                         <img class="cover-bg-img" src="assets/img/bg.svg" alt="">
                                     </div>
                                     <div class="dsn-form form-box d-flex flex-column p-relative">
-                                        <form id="contact-form" class="form w-100" onsubmit="sendToWhatsApp(event)">
+                                        <form id="contact-form" class="form w-100" onsubmit="sendEmail(event)">
                                             <div class="messages"></div>
                                             <div class="input__wrap controls">
                                                 <div class="d-grid" data-dsn-gap="0px 30px">
@@ -378,15 +378,13 @@
                                             </div>
                                         </form>
                                         <script>
-                                            function sendToWhatsApp(event) {
+                                            function sendEmail(event) {
                                                 event.preventDefault();
                                                 const name = document.getElementById('form_name').value;
                                                 const email = document.getElementById('form_email').value;
                                                 const message = document.getElementById('form_message').value;
-                                                const whatsappNumber = '+918714014140';
-                                                const whatsappMessage = `Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
-                                                const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
-                                                window.open(whatsappUrl, '_blank');
+                                                const mailtoLink = `mailto:iphonedockochi@gmail.com?subject=Contact Enquiry&body=Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
+                                                window.location.href = mailtoLink;
                                             }
                                         </script>
                                     </div>
